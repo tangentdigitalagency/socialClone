@@ -1,0 +1,67 @@
+extends layouts/login-layout.pug
+
+block content
+    .loginContainer
+        h1.header Register
+        form#registerForm(method='post', onsubmit="event.preventDefault(); validateForm();")
+            alert-x#noMatch('warning') <strong>Holy guacamole!</strong> Your Passwords Do Not Match! 
+            alert-x#noName('warning') <strong>Holy guacamole!</strong> We Don't Know What To Call You! 
+            alert-x#noUserName('warning') <strong>Holy guacamole!</strong> Pick a username, be clever! 
+            input#fName(type='text', name='firstName', placeholder='First Name')
+            input#lName(type='text', name='lastName', placeholder='Last Name')
+            input#uName(type='text', name='username', placeholder='Username')
+            input#email(type='email', name='email', placeholder='Email Address')
+            input#password(type='password', name='password', placeholder='Password', required="", min="5")
+            input#repeatPassword(type='password', name='repeatPassword', placeholder='Repeat Password', required="", min="5")
+            input(type='submit', value='Register')
+        a(href='/login') Already have an account? Login Here
+
+    script.
+        var passwordField = document.getElementById('password')
+        var repeatPasswordField = document.getElementById('repeatPassword')
+
+        var fName = document.getElementById('fName').value
+        var fNameField = document.getElementById('fName')
+
+        var lName = document.getElementById('lName').value
+        var lNameField = document.getElementById('lName')
+
+        var uName = document.getElementById('uName').value
+        var uNameField = document.getElementById('uName')
+
+        var form = document.getElementById('registerForm')
+
+         document.getElementById('noMatch').hidden = true;
+         document.getElementById('noName').hidden = true;
+         document.getElementById('noUserName').hidden = true;
+
+        function validateForm(){
+
+            if(fNameField.value.length === 0){
+                document.getElementById('noName').hidden = false;
+                fNameField.style.borderColor = 'red';
+                
+            }
+            else if(lNameField.value.length === 0){
+                document.getElementById('noName').hidden = false;
+                lNameField.style.borderColor = 'red';
+                
+            }
+            else if(uNameField.value.length === 0){
+                document.getElementById('noUserName').hidden = false;
+                uNameField.style.borderColor = 'red';
+                
+            }
+            else if(passwordField.value != repeatPassword.value){
+                document.getElementById('noMatch').hidden = false;
+                passwordField.style.borderColor = 'red';
+
+            }
+            else {
+                noMatch.hidden = true;
+                noName.hidden = true;
+                noUserName.hidden = true;
+
+                form.submit();
+            }
+        }
