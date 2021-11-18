@@ -2,15 +2,15 @@ extends layouts/login-layout.pug
 
 block content
     .loginContainer
-        h1.header Register
+        h1.header Register An Account
         form#registerForm(method='post', onsubmit="event.preventDefault(); validateForm();")
             alert-x#noMatch('warning') <strong>Holy guacamole!</strong> Your Passwords Do Not Match! 
             alert-x#noName('warning') <strong>Holy guacamole!</strong> We Don't Know What To Call You! 
             alert-x#noUserName('warning') <strong>Holy guacamole!</strong> Pick a username, be clever! 
-            input#fName(type='text', name='firstName', placeholder='First Name')
-            input#lName(type='text', name='lastName', placeholder='Last Name')
-            input#uName(type='text', name='username', placeholder='Username')
-            input#email(type='email', name='email', placeholder='Email Address')
+            input#fName(type='text', name='firstName', placeholder='First Name', value=firstName)
+            input#lName(type='text', name='lastName', placeholder='Last Name', value=lastName)
+            input#uName(type='text', name='username', placeholder='Username', value=username)
+            input#email(type='email', name='email', placeholder='Email Address', value=email)
             input#password(type='password', name='password', placeholder='Password', required="", min="5")
             input#repeatPassword(type='password', name='repeatPassword', placeholder='Repeat Password', required="", min="5")
             input(type='submit', value='Register')
