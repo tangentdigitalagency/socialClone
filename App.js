@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 const mongoose = require('./database');
+const session = require('express-session');
 
 
 
@@ -16,7 +17,13 @@ app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use(session({ 
+    secret: 'test',
+    resave: true,
+    saveUninitialized: false
+}))
 
 // Set Routes
 
@@ -29,7 +36,8 @@ app.use('/register', registerRoute)
 app.get('/', middleware.requireLogin, (req, res, next) => {
 
     var payload = {
-        pageTitle: 'Home'
+        pageTitle: 'Home',
+        userLoggedIn: req.session.user
     }
 
     res.status(200).render('home', payload)

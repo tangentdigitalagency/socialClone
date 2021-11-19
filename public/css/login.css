@@ -3,7 +3,8 @@
 body {
     background-image: url('../images/gradient.png');
     font-family: 'Shippori Antique B1', sans-serif;
-
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header{
@@ -55,6 +56,16 @@ a:hover {
 #noMatch {
     background-color: red;
     color: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px;
+}
+
+#payload {
+    background: rgba(255, 255, 255, 0.041);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.10 );
+    backdrop-filter: blur( 17px );
+    color: red;
     border-radius: 10px;
     margin: 15px;
     padding: 10px;

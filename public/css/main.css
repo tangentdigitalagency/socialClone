@@ -1,0 +1,54 @@
+
+:root{
+    --background: #070e27;
+    --gray: #4e5a85;
+    --white: white;
+    --blue: #0059f7;
+}
+
+
+nav {
+    background: var(--background);
+    border-right: 1px solid var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    padding-top: 15px;
+}
+
+nav a.logo {
+    background-color: var(--gray);
+    border-radius: 15px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav a {
+    padding: 10px;
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:var(--white);
+    border-radius: 15px;
+    margin: 5px;
+}
+
+nav a:hover {
+    background-color:  var(--gray);
+    border-radius: 15px;
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+
+.mainSectionContainer {
+    background: var(--gray);
+}
+
+.third {
+   background: #0059f7;
+}

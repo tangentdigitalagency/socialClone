@@ -4,6 +4,8 @@ block content
     .loginContainer
         h1.header Register An Account
         form#registerForm(method='post', onsubmit="event.preventDefault(); validateForm();")
+
+            alert-x#payload.errorMessage #{errorMessage}
             alert-x#noMatch('warning') <strong>Holy guacamole!</strong> Your Passwords Do Not Match! 
             alert-x#noName('warning') <strong>Holy guacamole!</strong> We Don't Know What To Call You! 
             alert-x#noUserName('warning') <strong>Holy guacamole!</strong> Pick a username, be clever! 
