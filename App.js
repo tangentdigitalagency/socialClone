@@ -16,7 +16,6 @@ app.set('view engine', 'pug');
 app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(session({ 
@@ -26,12 +25,20 @@ app.use(session({
 }))
 
 // Set Routes
-
 const loginRoute = require('./routes/loginRoutes');
 const registerRoute = require('./routes/registerRoutes');
+const logOutRoute = require('./routes/logout');
 
+//APi Routes
+const postApiRoute = require('./routes/api/posts');
+
+// Page Handlers
 app.use('/login', loginRoute)
 app.use('/register', registerRoute)
+app.use('/logout', logOutRoute)
+
+// API Handler
+app.use('/api/posts', postApiRoute)
 
 app.get('/', middleware.requireLogin, (req, res, next) => {
 

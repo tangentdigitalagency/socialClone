@@ -1,15 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap');
+
+body {
+    font-family: 'Shippori Antique B1', sans-serif;
+    background-color:var(--background)
+}
+
+h1 {
+    font-size: 19px;
+    margin: 0;
+    font-weight: bold;
+}
 
 :root{
     --background: #070e27;
     --gray: #4e5a85;
     --white: white;
     --blue: #0059f7;
+    --grayBorder: rgb(126, 126, 126);
+    --spacing: 15px;
+}
+
+* {
+   outline: none !important;
 }
 
 
 nav {
     background: var(--background);
-    border-right: 1px solid var(--gray);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -43,12 +60,166 @@ nav a:hover {
     color: var(--white);
     text-decoration: none;
     transition: 0.5s ease-in-out;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
 }
 
 .mainSectionContainer {
-    background: var(--gray);
+    background: var(--background);
+    padding: 0;
+    border-left: 1px solid var(--grayBorder);
+    border-right: 1px solid var(--grayBorder);
+    display: flex;
+    flex-direction: column;
 }
 
 .third {
-   background: #0059f7;
+   background:var(--background);
 }
+
+.titleContainer{ 
+    height: 50px;
+    padding: 0 var(--spacing);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--grayBorder);
+    color: white;
+    flex-shrink: 0;
+}
+
+.titleContainer h1 {
+    flex: 1;
+}
+
+.postFormContainer {
+    display: flex;
+    padding: var(--spacing);
+    border-bottom: 10px solid var(--gray);
+    flex-shrink: 0;
+}
+
+.userImageContainer {
+    width: 50px;
+    height: 50px;
+    
+}
+
+.userImageContainer img {
+    width: 100%;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.textAreaContainer {
+    flex: 1;
+    padding-left: var(--spacing);
+}
+
+.textAreaContainer textarea {
+    width: 100%;
+    border: 1px solid var(--gray);
+    resize: none;
+    font-size: 18px;
+    background: none;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 5px;
+    height: 100px;
+}
+
+#submitPostButton {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 7px 15px;
+}
+
+#submitPostButton:disabled {
+
+    background-color: var(--gray)
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    cursor: pointer;
+    border-bottom: 1px solid var(--gray);
+    flex-shrink: 0;
+}
+
+.mainContentContainer {
+    flex: 1;
+    display: flex;
+}
+
+.postContentContainer {
+    padding-left: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.username,
+.date {
+    color:var(--grayBorder);
+}
+
+.displayName {
+    color: white;
+    text-decoration: underline;
+    font-weight:600;
+}
+
+.displayName:hover {
+    text-decoration: underline;
+    color: var(--blue)
+}
+
+
+.postBody {
+    color: white;
+    font-size: 18px;
+}
+
+.postFooter {
+    display: flex;
+    align-items: center;
+}
+
+.postFooter .postButtonContainer {
+    flex: 1;
+    display: flex;
+}
+
+.postFooter .postButtonContainer button {
+    padding: 0 5px;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 15px;
+}
+
+.header a,
+.header span {
+    padding-right: 5px;
+}
+
+.postButtonContainer button:hover {
+    background-color: var(--gray);
+    color:white;
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+
+}
+
+.noResults {
+    color: white;
+    font-size: 25px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
