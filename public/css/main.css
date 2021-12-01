@@ -12,10 +12,12 @@ h1 {
 }
 
 :root{
-    --background: #070e27;
-    --gray: #4e5a85;
+    --background: #171717;
+    --gray: #9d9d9d;
     --white: white;
-    --blue: #0059f7;
+    --blue: #707aff;
+    --red: rgba(189, 31, 31, 0.667);
+    --green: #83ffc1;
     --grayBorder: rgb(126, 126, 126);
     --spacing: 15px;
 }
@@ -97,6 +99,23 @@ nav a:hover {
     flex-shrink: 0;
 }
 
+.modal-content {
+    background: var(--background);
+    color: white;
+
+}
+
+.modal .postFormContainer {
+    border: none;
+    padding: 0;
+    padding-top: var(--spacing);
+}
+
+.modal .post {
+    padding: 0;
+    padding-bottom: var(--spacing);
+}
+
 .userImageContainer {
     width: 50px;
     height: 50px;
@@ -167,12 +186,12 @@ nav a:hover {
 
 .displayName {
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
     font-weight:600;
 }
 
 .displayName:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--blue)
 }
 
@@ -223,3 +242,56 @@ nav a:hover {
     flex-direction: column;
 }
 
+button i,
+button span {
+    pointer-events: none;
+}
+
+.postButtonContainer.likedPost button.active {
+    background-color: var(--gray);
+    color:var(--red);
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+} 
+
+.postButtonContainer.repostPost button.active {
+    background-color: var(--gray);
+    color:var(--green);
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+} 
+
+.postActionContainer {
+    padding-left: 35px;
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+
+.replyFlag {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-left: 3px solid var(--gray);
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.post.largeFont .postBody,
+.post.largeFont .postFooter{
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.postContentContainer .header {
+    display: flex;
+}
+
+.postContentContainer  .header .date {
+    flex: 1;
+}
